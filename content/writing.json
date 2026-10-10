@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Title of your book",
+    "type": "Book",
+    "year": "Forthcoming",
+    "authors": "",
+    "venue": "Publisher name",
+    "link": "",
+    "pdf": "",
+    "image": "",
+    "summary": "A short description of the book.",
+    "featured": true
+  },
+  {
+    "title": "Title of a journal article",
+    "type": "Journal article",
+    "year": "2025",
+    "authors": "With Co-author Name",
+    "venue": "Journal Name 12, no. 3 (2025): 45–67",
+    "link": "",
+    "pdf": "",
+    "image": "",
+    "summary": "",
+    "featured": true
+  },
+  {
+    "title": "Title of a book chapter",
+    "type": "Book chapter",
+    "year": "2024",
+    "authors": "",
+    "venue": "In Edited Volume Title, edited by Editor Name. Publisher, 2024.",
+    "link": "",
+    "pdf": "",
+    "image": "",
+    "summary": "",
+    "featured": true
+  },
+  {
+    "title": "Title of an essay or article",
+    "type": "Essay or article",
+    "year": "2023",
+    "authors": "",
+    "venue": "Magazine or website name",
+    "link": "",
+    "pdf": "",
+    "image": "",
+    "summary": "",
+    "featured": false
+  }
+]

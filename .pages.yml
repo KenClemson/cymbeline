@@ -1,16 +1,16 @@
 # Pages CMS configuration (https://pagescms.org)
 # This is what gives the website its point-and-click editor.
-# Everything the editor changes is saved into content/site.json and images/.
+# Each section below edits one file in content/; uploads go into media/.
 
 media:
-  input: images
-  output: images
+  input: media
+  output: media
   rename: safe
-  extensions: [jpg, jpeg, png, webp, gif, avif, svg]
+  extensions: [jpg, jpeg, png, webp, gif, avif, svg, pdf, doc, docx]
 
 content:
   - name: site
-    label: My website
+    label: Home page & contact
     type: file
     path: content/site.json
     format: json
@@ -19,85 +19,35 @@ content:
         label: Your name
         type: string
         required: true
-        description: Shown big at the top of the page and in the browser tab.
-      - name: tagline
-        label: Tagline
+        description: Shown at the top of every page and in the browser tab.
+      - name: position
+        label: Position
         type: string
-        description: A few words shown just above your name, e.g. "Artist & illustrator".
+        description: Shown just above your name, e.g. "Senior Lecturer in History · University of X".
       - name: intro
         label: Welcome text
         type: text
-        description: A sentence or two shown under your name.
-
-      - name: work
-        label: Gallery
-        description: Each item is one piece in the gallery. Use "Add an entry" for a new piece, and drag items to change the order (the order here is the order on the site).
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
-        fields:
-          - name: image
-            label: Picture
-            type: image
-          - name: title
-            label: Title
-            type: string
-          - name: category
-            label: Category
-            type: string
-            description: e.g. Painting, Drawing, Photography. Visitors can filter the gallery by these.
-          - name: year
-            label: Year
-            type: string
-          - name: description
-            label: Description
-            type: text
-            description: Shown when someone opens the picture. Optional.
-          - name: link
-            label: Link (optional)
-            type: string
-            description: A web address to show with this piece, e.g. where to buy it.
-          - name: linkText
-            label: Link button text (optional)
-            type: string
-            description: e.g. "Buy a print". Leave empty for "Learn more".
-
-      - name: aboutPhoto
-        label: About me photo
+        description: A sentence or two shown under your name on the home page.
+      - name: photo
+        label: Your photo
         type: image
-      - name: about
-        label: About me
-        type: rich-text
+        description: Used on the home page and the About page.
+      - name: cv
+        label: CV
+        type: file
+        description: Upload a PDF. A "Download CV" button appears when there's one here.
         options:
-          format: html
-      - name: facts
-        label: Quick facts
-        description: Short facts shown under your About text.
-        type: object
-        list:
-          collapsible:
-            collapsed: false
-            summary: "{label}"
-        fields:
-          - name: label
-            label: Label
-            type: string
-          - name: value
-            label: Value
-            type: string
-
+          extensions: [pdf, doc, docx]
       - name: contactHeading
-        label: Contact heading
+        label: Contact page heading
         type: string
       - name: email
         label: Email address
         type: string
-        description: Shown in the Contact section. Leave empty to hide it.
+        description: Shown on the Contact page. Leave empty to hide it.
       - name: links
         label: Links
-        description: Instagram, shop, etc. Shown in the Contact section. Links with an empty web address are hidden.
+        description: Google Scholar, ORCID, university profile, etc. Shown on the Contact page. Links with an empty web address are hidden.
         type: object
         list:
           collapsible:
@@ -110,3 +60,97 @@ content:
           - name: url
             label: Web address
             type: string
+
+  - name: about
+    label: About page
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - name: about
+        label: About me
+        type: rich-text
+        options:
+          format: html
+      - name: interests
+        label: Research interests
+        description: Short phrases, shown as tags under your About text.
+        type: string
+        list: true
+
+  - name: writing
+    label: Writing
+    description: Your publications and other writing. They're sorted newest first on the site automatically.
+    type: file
+    path: content/writing.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{year} · {title}"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: type
+        label: Type
+        type: select
+        description: Visitors can filter your writing by type.
+        options:
+          values: [Book, Edited book, Journal article, Book chapter, Conference paper, Report, Review, Essay or article, Other]
+      - name: year
+        label: Year
+        type: string
+        description: e.g. 2025. Words like "Forthcoming" or "In press" are shown at the top.
+      - name: authors
+        label: Authors (optional)
+        type: string
+        description: e.g. "With Jane Smith", or the full author list.
+      - name: venue
+        label: Published in
+        type: string
+        description: 'Journal, book or publisher, e.g. "Journal of X 12, no. 3 (2025): 45–67".'
+      - name: link
+        label: Link (optional)
+        type: string
+        description: A DOI (e.g. 10.1000/xyz123) or web address.
+      - name: pdf
+        label: PDF (optional)
+        type: file
+        options:
+          extensions: [pdf]
+      - name: image
+        label: Cover image (optional)
+        type: image
+        description: Nice for books.
+      - name: summary
+        label: Summary (optional)
+        type: text
+        description: A short abstract. Visitors can tap to expand it.
+      - name: featured
+        label: Show on home page
+        type: boolean
+        description: Ticked items appear under "Recent writing" on the home page. If none are ticked, the newest three are shown.
+
+  - name: pages
+    label: Extra pages
+    description: Add any extra pages you like (Teaching, Talks, Projects...). Each appears in the menu, in this order.
+    type: file
+    path: content/pages.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{title}"
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+        description: Also used as the menu label.
+      - name: body
+        label: Page content
+        type: rich-text
+        options:
+          format: html

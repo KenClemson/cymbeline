@@ -1,0 +1,8 @@
+{
+  "about": "<p>This is your About page. Tell visitors who you are: your current position, your field, and what your research is about.</p><p>You might add a little about your background, your current projects, or what you teach. In the editor you can add headings, links, lists and pictures here.</p>",
+  "interests": [
+    "Research interest one",
+    "Research interest two",
+    "Research interest three"
+  ]
+}

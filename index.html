@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cymbeline B King — Portfolio</title>
-  <meta name="description" content="The portfolio of Cymbeline B King: selected work, about, and contact.">
-  <meta property="og:title" content="Cymbeline B King — Portfolio">
-  <meta property="og:description" content="Selected work, about, and contact.">
+  <title>Cymbeline B King</title>
+  <meta name="description" content="Cymbeline B King: research, writing and publications.">
+  <meta property="og:title" content="Cymbeline B King">
+  <meta property="og:description" content="Research, writing and publications.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
@@ -16,85 +16,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <a class="skip-link" href="#work">Skip to work</a>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- The menu and footer are filled in by script.js so every page shares them. -->
+  <header class="nav" id="nav"></header>
 
-  <header class="nav" id="nav">
-    <div class="wrap nav-inner">
-      <a class="nav-name" href="#top" data-field="name">Cymbeline B King</a>
-      <nav aria-label="Main">
-        <ul class="nav-links">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
+  <main id="main">
     <section class="hero wrap">
-      <p class="eyebrow" data-field="tagline"></p>
-      <h1 class="hero-name" data-field="name"></h1>
-      <p class="hero-intro" data-field="intro"></p>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="#work">See the work</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow" data-field="position"></p>
+          <h1 class="hero-name" data-field="name"></h1>
+          <p class="hero-intro" data-field="intro"></p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="writing.html">Read my work</a>
+            <a class="btn btn-ghost" href="about.html">About me</a>
+            <a class="btn btn-ghost" data-cv target="_blank" rel="noopener" hidden>Download CV</a>
+          </div>
+        </div>
+        <div class="hero-photo" data-photo-wrap>
+          <img data-photo alt="">
+        </div>
       </div>
     </section>
 
-    <section class="section wrap" id="work" aria-labelledby="work-title">
+    <section class="section wrap" aria-labelledby="recent-title">
       <div class="section-head">
-        <h2 id="work-title">Selected work</h2>
-        <div class="filters" id="filters" role="group" aria-label="Filter work by category"></div>
+        <h2 id="recent-title">Recent writing</h2>
+        <a class="more-link" href="writing.html">All writing &rarr;</a>
       </div>
-      <ul class="grid" id="grid"></ul>
-    </section>
-
-    <section class="section wrap" id="about" aria-labelledby="about-title">
-      <div class="about">
-        <div class="about-photo">
-          <img id="about-photo" alt="" loading="lazy">
-        </div>
-        <div class="about-text">
-          <h2 id="about-title">About</h2>
-          <div id="about-body"></div>
-          <dl class="facts" id="facts"></dl>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap contact" id="contact" aria-labelledby="contact-title">
-      <p class="eyebrow">Contact</p>
-      <h2 id="contact-title" class="contact-title" data-field="contactHeading"></h2>
-      <a class="contact-email" id="contact-email" href="#"></a>
-      <ul class="socials" id="socials"></ul>
+      <ol class="pubs" id="pubs" data-home></ol>
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <span>&copy; <span id="year"></span> <span data-field="name"></span></span>
-    <a href="#top">Back to top &uarr;</a>
-  </footer>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
-    <button class="lb-btn lb-close" id="lb-close" aria-label="Close">&times;</button>
-    <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous piece">&larr;</button>
-    <figure class="lb-figure">
-      <img id="lb-img" alt="">
-      <figcaption>
-        <div class="lb-meta">
-          <strong id="lb-title"></strong>
-          <span id="lb-sub"></span>
-        </div>
-        <p id="lb-desc"></p>
-        <a class="lb-link" id="lb-link" target="_blank" rel="noopener" hidden></a>
-      </figcaption>
-    </figure>
-    <span class="lb-count" id="lb-count"></span>
-    <button class="lb-btn lb-next" id="lb-next" aria-label="Next piece">&rarr;</button>
-  </div>
-
+  <footer class="footer wrap" id="footer"></footer>
   <script src="script.js"></script>
 </body>
 </html>
