@@ -276,7 +276,7 @@ html.loading main, html.loading .footer { opacity: 0; }
   position: fixed; inset: 0; z-index: 100;
   display: grid; place-items: center;
   padding: 64px 84px 40px;
-  background: rgba(12, 12, 13, .95);
+  background: rgba(12, 12, 13, .98);
   color: #e4e4e7;
   animation: fade .2s ease;
 }
