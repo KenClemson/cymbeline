@@ -1,27 +1,22 @@
 {
   "name": "Cymbeline B King",
-  "position": "Your title · Your department, Your university",
-  "intro": "A sentence or two about your research: the questions you work on and why they matter.",
+  "position": "writer",
+  "intro": "i write stuff",
   "photo": "media/portrait.svg",
-  "cv": "",
   "contactHeading": "Get in touch",
   "email": "hello@example.com",
   "links": [
     {
-      "label": "Google Scholar",
-      "url": ""
+      "label": "Google Scholar"
     },
     {
-      "label": "ORCID",
-      "url": ""
+      "label": "ORCID"
     },
     {
-      "label": "University profile",
-      "url": ""
+      "label": "University profile"
     },
     {
-      "label": "LinkedIn",
-      "url": ""
+      "label": "LinkedIn"
     }
   ]
 }
