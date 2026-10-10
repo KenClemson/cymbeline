@@ -2,7 +2,7 @@
 
 A simple portfolio site, hosted free on GitHub Pages.
 
-**Live site:** https://kenclemson.github.io/cymbeline/
+**Live site:** https://kenclemson.github.io/cymbeline/ (moving to https://cymbelinebking.com once the domain is set up)
 
 ## Editing the site (no code needed)
 
