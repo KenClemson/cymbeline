@@ -1,0 +1,92 @@
+{
+  "name": "Cymbeline",
+  "tagline": "Artist & maker",
+  "intro": "I make paintings, drawings and photographs about light, texture and everyday places. Here's a small collection of recent work.",
+  "work": [
+    {
+      "image": "images/morning-window.svg",
+      "title": "Morning Window",
+      "category": "Painting",
+      "year": "2026",
+      "description": "Oil on canvas, 40 × 50 cm.\nThe first light of the day across the kitchen table.",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "image": "images/blue-hour.svg",
+      "title": "Blue Hour",
+      "category": "Photography",
+      "year": "2026",
+      "description": "Archival print, 30 × 40 cm.",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "image": "images/garden-in-june.svg",
+      "title": "Garden in June",
+      "category": "Painting",
+      "year": "2025",
+      "description": "Gouache on paper.",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "image": "images/still-life-with-lemons.svg",
+      "title": "Still Life with Lemons",
+      "category": "Painting",
+      "year": "2025",
+      "description": "Oil on board, 30 × 30 cm.",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "image": "images/tide-lines.svg",
+      "title": "Tide Lines",
+      "category": "Drawing",
+      "year": "2025",
+      "description": "Ink on paper. A study of the shoreline at low tide.",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "image": "images/quiet-street.svg",
+      "title": "Quiet Street",
+      "category": "Photography",
+      "year": "2024",
+      "description": "Digital photograph.",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "image": "images/paper-moons.svg",
+      "title": "Paper Moons",
+      "category": "Drawing",
+      "year": "2024",
+      "description": "Cut paper and graphite.",
+      "link": "",
+      "linkText": ""
+    },
+    {
+      "image": "images/field-notes.svg",
+      "title": "Field Notes",
+      "category": "Drawing",
+      "year": "2024",
+      "description": "Pages from a sketchbook.",
+      "link": "",
+      "linkText": ""
+    }
+  ],
+  "aboutPhoto": "images/portrait.svg",
+  "about": "<p>Hi, I'm Cymbeline. This is the place to tell visitors a little about yourself: where you're based, what you make, and what you love about it.</p><p>You might mention how you got started, the materials you like working with, or what you're working on right now. A few short paragraphs is plenty.</p>",
+  "facts": [
+    { "label": "Based in", "value": "Your city" },
+    { "label": "Works in", "value": "Oil, ink & film" },
+    { "label": "Open to", "value": "Commissions & collaborations" }
+  ],
+  "contactHeading": "Let's make something together.",
+  "email": "hello@example.com",
+  "links": [
+    { "label": "Instagram", "url": "" },
+    { "label": "Etsy shop", "url": "" }
+  ]
+}

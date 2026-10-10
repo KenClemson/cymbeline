@@ -1,0 +1,112 @@
+# Pages CMS configuration (https://pagescms.org)
+# This is what gives the website its point-and-click editor.
+# Everything the editor changes is saved into content/site.json and images/.
+
+media:
+  input: images
+  output: images
+  rename: safe
+  extensions: [jpg, jpeg, png, webp, gif, avif, svg]
+
+content:
+  - name: site
+    label: My website
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: name
+        label: Your name
+        type: string
+        required: true
+        description: Shown big at the top of the page and in the browser tab.
+      - name: tagline
+        label: Tagline
+        type: string
+        description: A few words shown just above your name, e.g. "Artist & illustrator".
+      - name: intro
+        label: Welcome text
+        type: text
+        description: A sentence or two shown under your name.
+
+      - name: work
+        label: Gallery
+        description: Each item is one piece in the gallery. Use "Add an entry" for a new piece, and drag items to change the order (the order here is the order on the site).
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: image
+            label: Picture
+            type: image
+          - name: title
+            label: Title
+            type: string
+          - name: category
+            label: Category
+            type: string
+            description: e.g. Painting, Drawing, Photography. Visitors can filter the gallery by these.
+          - name: year
+            label: Year
+            type: string
+          - name: description
+            label: Description
+            type: text
+            description: Shown when someone opens the picture. Optional.
+          - name: link
+            label: Link (optional)
+            type: string
+            description: A web address to show with this piece, e.g. where to buy it.
+          - name: linkText
+            label: Link button text (optional)
+            type: string
+            description: e.g. "Buy a print". Leave empty for "Learn more".
+
+      - name: aboutPhoto
+        label: About me photo
+        type: image
+      - name: about
+        label: About me
+        type: rich-text
+        options:
+          format: html
+      - name: facts
+        label: Quick facts
+        description: Short facts shown under your About text.
+        type: object
+        list:
+          collapsible:
+            collapsed: false
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: value
+            label: Value
+            type: string
+
+      - name: contactHeading
+        label: Contact heading
+        type: string
+      - name: email
+        label: Email address
+        type: string
+        description: Shown in the Contact section. Leave empty to hide it.
+      - name: links
+        label: Links
+        description: Instagram, shop, etc. Shown in the Contact section. Links with an empty web address are hidden.
+        type: object
+        list:
+          collapsible:
+            collapsed: false
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Name
+            type: string
+          - name: url
+            label: Web address
+            type: string
